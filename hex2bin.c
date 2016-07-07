@@ -36,20 +36,20 @@ int main(int argc, char* argv[])
 
     if(check_file_name(input_file_name))
     {
-        fputs("Input file name is too long!\n", stderr); //HOBAA
+        fputs("Input file name is too long!\n", stderr);
         return 1;
     }
 
     if(check_file_name(output_file_name))
     {
-        fputs("Output file name is too long!\n", stderr); //HOBAA
+        fputs("Output file name is too long!\n", stderr);
         return 1;
     }
 
 
     if(!strncmp(input_file_name, output_file_name, FILENAME_MAX))
     {
-        fputs("Files must be different!\n", stderr); //HOBAA
+        fputs("Files must be different!\n", stderr);
         return 1;
     }
 
