@@ -26,7 +26,6 @@ int main(int argc, char* argv[])
         fputs("Missing output file operand!\n", stderr);
         return 1;
     case 3:
-
         if(check_file_name(argv[1]))
         {
             fputs("Input file name is too long!\n", stderr);
