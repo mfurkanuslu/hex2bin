@@ -26,6 +26,18 @@ int main(int argc, char* argv[])
         fputs("Missing output file operand!\n", stderr);
         return 1;
     case 3:
+
+        if(check_file_name(argv[1]))
+        {
+            fputs("Input file name is too long!\n", stderr);
+            return 1;
+        }
+
+        if(check_file_name(argv[2]))
+        {
+            fputs("Output file name is too long!\n", stderr);
+            return 1;
+        }
         strncpy(input_file_name, argv[1], FILENAME_MAX);
         strncpy(output_file_name, argv[2], FILENAME_MAX);
         break;
@@ -33,19 +45,6 @@ int main(int argc, char* argv[])
         fputs("Operand count mismatch!\n", stderr);
         return 1;
     }
-
-    if(check_file_name(input_file_name))
-    {
-        fputs("Input file name is too long!\n", stderr);
-        return 1;
-    }
-
-    if(check_file_name(output_file_name))
-    {
-        fputs("Output file name is too long!\n", stderr);
-        return 1;
-    }
-
 
     if(!strncmp(input_file_name, output_file_name, FILENAME_MAX))
     {
